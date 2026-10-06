@@ -1,0 +1,101 @@
+.game-field {
+    width: 320px;
+    margin: 80px auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+
+    justify-content: center;
+    text-align: center;
+}
+
+.game-field > div {
+    grid-column: 1 / -1;
+
+    margin-bottom: 15px;
+
+    font-size: 20px;
+    font-weight: 600;
+    min-height: 24px;
+}
+
+.game-field button {
+    width: 100px;
+    height: 100px;
+
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    background: #fff;
+
+    font-size: 42px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+            background-color 0.15s,
+            transform 0.1s;
+}
+
+.game-field button:hover:not(:disabled) {
+    background-color: #f3f3f3;
+}
+
+.game-field button:active:not(:disabled) {
+    transform: scale(0.95);
+}
+
+.game-field button:disabled {
+    cursor: default;
+}
+
+.game-field > button:last-child {
+    grid-column: 1 / -1;
+
+    width: 305px;
+    height: 45px;
+
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #333;
+    color: white;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.game-field > button:last-child:hover {
+    background-color: #555;
+}
+
+.game-field > button:last-child:active {
+    transform: scale(0.98);
+}
+
+.game-result {
+    display: inline-block;
+    animation: win-animation 0.7s ease-out;
+}
+
+@keyframes win-animation {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
